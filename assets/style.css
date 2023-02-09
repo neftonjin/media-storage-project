@@ -48,4 +48,14 @@ a{
   margin-top: 5rem;
   margin-left: auto;
   padding-right: 4rem;
+  
 }
+#highscores a{
+    color: firebrick;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+#scores_container{
+    margin-left:auto;
+}
+
