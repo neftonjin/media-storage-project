@@ -2,14 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: 0;
+   
 }
-
+h2{
+    font-size: clamp(0, 5vh + 0.75rem, 0);
+    text-align: center;
+}
 .wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
+    gap:6rem
 }
 
 header{
@@ -29,4 +34,9 @@ header{
     flex-direction: column;
     padding: 3rem 0;
     align-items: center;
+}
+
+.play{
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
