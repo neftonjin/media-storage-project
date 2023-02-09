@@ -3,3 +3,30 @@
     padding: 0;
     box-sizing: 0;
 }
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+
+header{
+    margin: 2rem;
+    margin: 0 auto;
+    text-align: center;
+}
+#box_wrap{
+    padding: 1rem;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.box{
+    
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0;
+    align-items: center;
+}

@@ -18,22 +18,35 @@
     />
     <!-- css style link -->
     <link type="text/css" rel="stylesheet" href="./assets/style.css" />
-    <title>Media quiz</title>
+    <title>Guess the year & Guess the movie</title>
   </head>
 
   <body>
-    <header class="container-fluid text-center text-white weather-header">
-      <h1 id="title">Media Quiz</h1>
-    </header>
-
-
-    
-    <!-- Js link-->
-    <script src="./assets/logic.js"></script>
+    <div class="wrapper">
+      <header>
+        <p class="title_paragraph">Welcome to the ...</p>
+        <h1 class="title">Song & movie quiz!</h1>
+      </header>
+      <div class="container">
+        <div id="box_wrap" class="row">
+          <div class="col-4 border border-dark box" id="box1">
+            <h2>Guess the year</h2>
+            <p>Song quiz</p>
+            <span id="play_song_button" class="play btn btn-danger">Play</span>
+          </div>
+          <div class="col-4 border border-dark box" id="box2">
+            <h2>Guess the movie</h2>
+            <p>Movie quiz</p>
+            <span id="play_song_button" class="play btn btn-primary">Play</span>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Js link-->
     <script src="./assets/logic.js"></script>
   </body>
 </html>
