@@ -41,9 +41,11 @@ header {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-
+a{
+    color: white;
+}
 #highscores {
-    margin-top: 5rem;
-    margin-left: auto; 
-    padding-right: 4rem; 
+  margin-top: 5rem;
+  margin-left: auto;
+  padding-right: 4rem;
 }
