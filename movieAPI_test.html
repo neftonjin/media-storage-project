@@ -4,10 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Boot strap link -->
+    <link
+    type="text/css"
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome link -->
+    <link
+    type="text/css"
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- css style link -->
+    <link type="text/css" rel="stylesheet" href="./assets/style.css" />
+    <title>Guess the year & Guess the movie</title>
+    <title>Movie quiz</title>
 </head>
 <body>
+    <div class="wrapper">
+        <header>
+            <h1 class="title">Guess the year movie</h1>
+            <h2>Can you guess the movie from the clues provided?</h2>
+        </header>
+        <div class="container">
+          <div id="box_wrap" class="row">
+            <div class="col-4 box" id="questions">
+              <h2>Write your answer here</h2>
+              <br>
+              <input type="number" placeholder="Type your answer here"></input>
+              <br>
+              <br>
+              <h2>Do you need a clue?</h2>
+              <span id="show_movie_button" class="play btn btn-danger">Hint</span>
+            </div>
+            <div class="col-4 border " id="clue-box">
+              <h3>1st clue</h3>
+            </div>
+          </div>
+        </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="API_test.js"></script>
+    <script src="./assets/movieAPI_test.js"></script>
 </body>
 </html>
