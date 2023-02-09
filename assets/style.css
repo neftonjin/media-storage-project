@@ -5,6 +5,7 @@
    
 }
 h2{
+    padding: 0.5rem;
     font-size: clamp(0, 5vh + 0.75rem, 0);
     text-align: center;
 }
@@ -35,7 +36,9 @@ header{
     padding: 3rem 0;
     align-items: center;
 }
-
+#box1{
+    justify-content: space-between;
+}
 .play{
     padding-left: 2rem;
     padding-right: 2rem;
