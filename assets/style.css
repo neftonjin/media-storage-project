@@ -46,7 +46,6 @@ header {
 .play {
   padding-left: 2rem;
   padding-right: 2rem;
-<<<<<<< HEAD
 }
 a{
     color: white;
@@ -72,6 +71,8 @@ a{
 span a:hover {
   color: black;
   text-decoration: none;
-=======
->>>>>>> bfc8a674862c95751506e2dadcbe91245fa50f4f
+}
+
+.lives{
+  
 }
