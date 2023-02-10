@@ -62,3 +62,6 @@ a{
 .gap{
   gap: 2rem;
 }
+span a:hover {
+  text-decoration: none;
+}
