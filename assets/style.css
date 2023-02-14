@@ -146,7 +146,7 @@ a:hover {
   color: #007bff;
 }
 
-.home-button {
+.nav-button {
   color: white;
   border-radius: 3px;
   background-color: #47d645;
@@ -161,7 +161,7 @@ a:hover {
   margin-top: 40px;
 }
 
-.home-button:hover {
+.nav-button:hover {
   color: #47d645;
   background-color: white;
   border: solid 1px #47d645;
