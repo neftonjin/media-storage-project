@@ -26,6 +26,6 @@ $('#submit-movie').on("submit", function (event) {
     } else {
         console.log(`No, it is not ${inputMovie}`);
     }
-    inputMovie.val('');
+    inputMovie = $('#input-movie').val('');
 })
 
