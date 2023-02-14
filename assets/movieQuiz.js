@@ -24,8 +24,7 @@ $('#submit-movie').on("submit", function (event) {
     if (inputMovie.toLowerCase() === movieTitle.toLowerCase()) {
         console.log(`you got it right, it is ${movieTitle}`);
     } else {
-        console.log("i don't know what's going on"),
-        console.log(`it was ${movieTitle}`);
+        console.log(`No, it is not ${inputMovie}`);
     }
     inputMovie.val('');
 })
