@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Boot strap link -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome link -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- css style link -->
+    <link type="text/css" rel="stylesheet" href="./assets/style.css" />
+    <title>Song Quiz</title>
+  </head>
+
+  <body>
+        <header>
+          <p class="lives p-3 text-right">Lives: <span id="lives">10</span></p>
+          <h1 class="p-3">Guess the year song quiz</h1>
+          <p class="subtitle py-3"> Instruction on how to play  </p> 
+        </header>
+        <main class="container">
+          <div class="main_wrap row justify-content-center  gap">
+            <div class="question_card col4">
+              <p class="py-2" id="question_title">
+                What year are theses songs released ?
+              </p>
+              <input class="" type="text" placeholder="type your answer">
+              <p class="py-3">Do you need to hear another song?</p>
+              <button class="btn btn-success">Play next track</button>
+            </div>
+            <div class="song_player col-6 p-3">{Song player to be inserted}</div>
+          </div>
+
+        </main>
+
+    
+       
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Js link-->
+    <script src="./assets/logic.js"></script>
+  </body>
+</html>
