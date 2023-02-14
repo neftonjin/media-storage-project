@@ -135,6 +135,10 @@ a:hover {
     width: 100%;
     margin: 15px;
   }
+  .HS-title {
+    margin-top: 100px;
+    margin-bottom: 0px;
+  }
 
 }
 
