@@ -1,35 +1,83 @@
-let movieTitles = ["Fight club", "Kill bill", "Trainspotting", "Forrest Gump", "Inglorious basterds", "Back to the future", "Ghostbusters", "Inception"]
-let movieTitle = movieTitles[Math.floor(Math.random() * movieTitles.length)];
-const queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=trilogy";
-const lives = 10;
-const points = 0;
+//feature/movieQuizContinued
+let movieTitles = ["Fight club", "Kill bill", "Trainspotting", "Forrest Gump", "Inglorious basterds", "Back to the future", "Ghostbusters", "Inception", "Pulp fiction", "Taxi driver", "The Godfather", "Eternal sunshine of the spotless mind", "The Shining", "Alien", "Pan's Labyrinth", "Indiana Jones and the Raiders of the Lost Ark", "Scarface"];
+// let usedMovieTitles = [];
+let movieTitle = "";
+let queryURL = "";
+let score = 0;
+const scoreEl = $('#score');
+
+
+// Function to generate a new movie title and make a new API call
+function generateNewQuestion() {
+    // Choose a random movie title from the array
+    movieTitle = movieTitles[Math.floor(Math.random() * movieTitles.length)];
+    queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=trilogy";
+
+    // Make the API call
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+        console.log(response);
+        console.log(response.Actors);
+        let clueTitle = $('<h3>').text('Clue');
+        let actorsClueEl = $('<div>').text(response.Actors).addClass('box');
+        $('#clue-box').append(clueTitle, actorsClueEl);
+    });
+}
 
 $(window).on("load",  function () {
-    $.ajax({
-    url: queryURL,
-    method: "GET"
-    }).then(function(response) {
+    // Call the function to generate the first question
+    generateNewQuestion();
+});
 
-    console.log(response);
-    
-    console.log(response.Actors);
-    let actorsClueEl = $('<div>').text(response.Actors).addClass('box');
-    $('#clue-box').append(actorsClueEl);
-    })}
-);
-
-
+// Event listener for the submit button
 $('#submit-movie').on("submit", function (event) {
     event.preventDefault();
     let inputMovie = $('#input-movie').val();
-     
+    let modalP = $('<p>');
+    let modalCorrectMovieBtn = $('<button>');
+    modalCorrectMovieBtn.attr({
+        type: "button", 
+        class: "btn-btn-primary", 
+        id: "correctMovie"});
+    let movieModalBody = $('.movie-modal-body');
+    movieModalBody.append(modalP, modalCorrectMovieBtn);
+    let movieAnswerModalToggle = $('#movieAnswerModal').modal('toggle');
+
+    // If/else statement to check whether the user got the movie right
     if (inputMovie.toLowerCase() === movieTitle.toLowerCase()) {
+        movieAnswerModalToggle;
+        $('#modalResult').text('Correct!');
+        modalP.text('The film is...');
+        modalCorrectMovieBtn.text(movieTitle);
         console.log(`you got it right, it is ${movieTitle}`);
-        points += 10;
+        feature/movieQuizContinued
+        score += 10; // add 10 points to the score
+        $('#score').text(`Score: ${score}`); // display the updated score
+
     } else {
+        movieAnswerModalToggle;
+        $('#modalResult').text("That's wrong, sorry!");
         console.log(`No, it is not ${inputMovie}`);
         lives -=1;
     }
     inputMovie = $('#input-movie').val('');
 })
+
+// Event listener for the next question button
+$('#next-question').on('click', function() {
+    // Remove the previous movie clue from the screen
+    $('#clue-box').empty();
+    $('#movieAnswerModal').modal('hide');
+    // Generate a new question
+    generateNewQuestion();
+    $('.movie-modal-body').empty();
+});
+
+// $('#close-modal').on('click', function () {
+    
+// })
+
+
 
