@@ -4,6 +4,8 @@ let movieTitles = ["Fight club", "Kill bill", "Trainspotting", "Forrest Gump", "
 let movieTitle = "";
 let queryURL = "";
 let score = 0;
+let lives = 3;
+let questionNumber=10;
 const scoreEl = $('#score');
 
 
@@ -29,11 +31,24 @@ function generateNewQuestion() {
 $(window).on("load",  function () {
     // Call the function to generate the first question
     generateNewQuestion();
+    showAllScores(movieHightScoresId);
 });
 
 // Event listener for the submit button
 $('#submit-movie').on("submit", function (event) {
     event.preventDefault();
+    questionNumber --;
+    if (lives === 0) {
+        // Redirect to another page
+        window.location.href = "outOfLives.html";
+        setScore(score);
+      }
+     else if (questionNumber===0) {
+        window.location.href = "highScores.html";
+        setScore(score);
+        
+
+     }
     let inputMovie = $('#input-movie').val();
     let modalP = $('<p>');
     let modalCorrectMovieBtn = $('<button>');
@@ -52,17 +67,19 @@ $('#submit-movie').on("submit", function (event) {
         modalP.text('The film is...');
         modalCorrectMovieBtn.text(movieTitle);
         console.log(`you got it right, it is ${movieTitle}`);
-        feature/movieQuizContinued
         score += 10; // add 10 points to the score
         $('#score').text(`Score: ${score}`); // display the updated score
-
+       
     } else {
         movieAnswerModalToggle;
         $('#modalResult').text("That's wrong, sorry!");
         console.log(`No, it is not ${inputMovie}`);
         lives -=1;
+        $("#lives").text(lives);
+        console.log(lives +"lives")
     }
     inputMovie = $('#input-movie').val('');
+    
 })
 
 // Event listener for the next question button
@@ -78,6 +95,10 @@ $('#next-question').on('click', function() {
 // $('#close-modal').on('click', function () {
     
 // })
+
+
+
+
 
 
 

@@ -30,24 +30,24 @@ function setScore(points) {
 
 
 //Showing the score on the list
-  function showAllScores (id){
-   let hightScoresId = id;
-   if( JSON.parse(localStorage.getItem("inputHistory")).length !== undefined ){
-    for( let i = 0; i < JSON.parse(localStorage.getItem("inputHistory")).length; i++) { 
-        let li= document.createElement("li"); 
-        console.log("testing loop ");
-        li.textContent =  JSON.parse(localStorage.getItem("inputHistory"))[i] + " "  + JSON.parse(localStorage.getItem("scArray"))[i];
-        hightScoresId.appendChild(li);
-   }
-   }
-     return;
-}  
+function showAllScores (id){
+  let highScoresId = id;
+  let inputHistory = JSON.parse(localStorage.getItem("inputHistory"));
+  let scArray = JSON.parse(localStorage.getItem("scArray"));
+  if(inputHistory !== null && scArray !== null && inputHistory.length !== undefined) {
+     for(let i = 0; i < inputHistory.length; i++) { 
+        let li = document.createElement("li"); 
+        li.textContent = inputHistory[i] + " " + scArray[i];
+        highScoresId.appendChild(li);
+     }
+  }
+}
 
 inputValue="M.J";
 
 historyStorage(inputValue);
-setScore(randomPoints);
-showAllScores(movieHightScoresId);
+// setScore(randomPoints);
+// showAllScores(movieHightScoresId);
 
 //This function is clearing the localstorage API
 function clear (){
