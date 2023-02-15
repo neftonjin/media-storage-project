@@ -7,10 +7,16 @@ let score = 0;
 const scoreEl = $('#score');
 let guesses = 0;
 
+// Function to select a random movie title from an array
+function selectRandomMovieTitle(movieTitles) {
+    let randomIndex = Math.floor(Math.random() * movieTitles.length);
+    return movieTitles[randomIndex];
+  }
+
 // Function to generate a new movie title and make a new API call
 function generateNewQuestion() {
     // Choose a random movie title from the array
-    movieTitle = movieTitles[Math.floor(Math.random() * movieTitles.length)];
+    movieTitle = selectRandomMovieTitle(movieTitles);
     queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=trilogy";
 
     // Make the API call
@@ -19,17 +25,19 @@ function generateNewQuestion() {
         method: "GET"
     }).then(function(response) {
         console.log(response);
-        console.log(response.Actors);
+        // console.log(response.Actors);
         let clueTitle = $('<h3>').text('Clue');
         let actorsClueEl = $('<div>').text(response.Actors).addClass('box');
         $('#clue-box').append(clueTitle, actorsClueEl);
     });
 }
 
-$(window).on("load",  function () {
-    // Call the function to generate the first question
-    generateNewQuestion();
-});
+// $(window).on("load",  function () {
+// Call the function to generate the first question
+generateNewQuestion();
+const currentMovie = movieTitle; // store the current movie title in a variable
+// console.log(currentMovie);
+// });
 
 // Event listener for the submit button
 $('#submit-movie').on("submit", function (event) {
@@ -66,8 +74,7 @@ $('#submit-movie').on("submit", function (event) {
     inputMovie = $('#input-movie').val('');
 })
 
-// Event listener for the next question button
-// $('#next-question').on('click', function() {
+// Event listener for the next question and close buttons
 $('.modal-footer').on('click', function() {
     // Remove the previous movie clue from the screen
     $('#clue-box').empty();
@@ -86,7 +93,18 @@ $('.modal-footer').on('click', function() {
     }
 });
 
+$('#show_movie_button').on('click', function () {
+    queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=trilogy";
 
-
-
-
+    // Make the API call
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+        let hintTitle = $('<h3>').text('Hint');
+        let plotClueEl = $('<div>').text(response.Plot).addClass('box');
+        $('#clue-box').append(hintTitle, plotClueEl);
+    })
+    score -= 5; // subtract 5 points to the score
+    $('#score').text(`Score: ${score}`); // display the updated score
+});
