@@ -5,7 +5,7 @@ let movieTitle = "";
 let queryURL = "";
 let score = 0;
 const scoreEl = $('#score');
-
+let guesses = 0;
 
 // Function to generate a new movie title and make a new API call
 function generateNewQuestion() {
@@ -34,6 +34,7 @@ $(window).on("load",  function () {
 // Event listener for the submit button
 $('#submit-movie').on("submit", function (event) {
     event.preventDefault();
+    guesses++; // increment the number of guesses
     let inputMovie = $('#input-movie').val();
     let modalP = $('<p>');
     let modalCorrectMovieBtn = $('<button>');
@@ -44,7 +45,7 @@ $('#submit-movie').on("submit", function (event) {
     let movieModalBody = $('.movie-modal-body');
     movieModalBody.append(modalP, modalCorrectMovieBtn);
     let movieAnswerModalToggle = $('#movieAnswerModal').modal('toggle');
-
+    
     // If/else statement to check whether the user got the movie right
     if (inputMovie.toLowerCase() === movieTitle.toLowerCase()) {
         movieAnswerModalToggle;
@@ -52,7 +53,7 @@ $('#submit-movie').on("submit", function (event) {
         modalP.text('The film is...');
         modalCorrectMovieBtn.text(movieTitle);
         console.log(`you got it right, it is ${movieTitle}`);
-        feature/movieQuizContinued
+  
         score += 10; // add 10 points to the score
         $('#score').text(`Score: ${score}`); // display the updated score
 
@@ -66,18 +67,26 @@ $('#submit-movie').on("submit", function (event) {
 })
 
 // Event listener for the next question button
-$('#next-question').on('click', function() {
+// $('#next-question').on('click', function() {
+$('.modal-footer').on('click', function() {
     // Remove the previous movie clue from the screen
     $('#clue-box').empty();
     $('#movieAnswerModal').modal('hide');
+    inputMovie = $('#input-movie').val('');
+
+    // check if the user has made 5 guesses
+    if (guesses >= 5) {
+        // display a message or take any action you want
+        alert("The quiz is done!");
+        return;
+    } else { 
     // Generate a new question
     generateNewQuestion();
     $('.movie-modal-body').empty();
+    }
 });
 
-// $('#close-modal').on('click', function () {
-    
-// })
+
 
 
 
