@@ -171,3 +171,11 @@ a:hover {
   border: solid 1px #47d645;
   box-shadow: 1px 1px;
 }
+
+#songHighScores  {
+  margin-left: 1rem;
+
+}
+#movieHighScores {
+  margin-left: 1rem;
+}
