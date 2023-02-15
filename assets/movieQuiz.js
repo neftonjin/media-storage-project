@@ -72,5 +72,9 @@ $('#next-question').on('click', function() {
     $('.movie-modal-body').empty();
 });
 
+// $('#close-modal').on('click', function () {
+    
+// })
+
 
 
