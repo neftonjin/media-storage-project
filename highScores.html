@@ -21,8 +21,10 @@
 
     <h1 class="HS-title">High scores</h1>
 
-
-    <a href="index.html"><button class="nav-button">Home</button></a>
+   
+        <a class="home-btn ml-2" href="index.html"><button class=" btn btn-success" >Home</button></a>
+        <button class="btn btn-success my-3 " id="clear">Clear Local Storage</button>
+    
 
 
 
@@ -30,17 +32,18 @@
         <div class="high-scores-tile">
             <h2 id="HS-song-header">Guess the year song quiz</h2>
             <p>No scores available...</p>
+            <ol id="songHighScores"> </ol>
         </div>
 
 
         <div class="high-scores-tile">
             <h2 id="HS-movie-header">Guess the movie quiz</h2>
             <p>No scores available...</p>
-            <ol id="highScores"> </ol>
+            <ol id="movieHighScores"> </ol>
         </div>
     </section>
 
-    <button class="btn btn-success" id="clear">Clear Local Storage</button>
+  
 
     <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>

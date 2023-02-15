@@ -15,7 +15,8 @@ function historyStorage(inputValue) {
 
 
 let randomPoints= 10;
-let hightScoresId = document.getElementById("highScores");//changed with song container
+let movieHightScoresId = document.getElementById("movieHighScores");//changed with song container
+let songHightScoresId = document.getElementById("songHighScores");//changed with song container
 
   
 // Setting the score 
@@ -29,7 +30,8 @@ function setScore(points) {
 
 
 //Showing the score on the list
-  function showAllScores (){
+  function showAllScores (id){
+   let hightScoresId = id;
    if( JSON.parse(localStorage.getItem("inputHistory")).length !== undefined ){
     for( let i = 0; i < JSON.parse(localStorage.getItem("inputHistory")).length; i++) { 
         let li= document.createElement("li"); 
@@ -45,7 +47,7 @@ inputValue="M.J";
 
 historyStorage(inputValue);
 setScore(randomPoints);
-showAllScores();
+showAllScores(movieHightScoresId);
 
 //This function is clearing the localstorage API
 function clear (){
