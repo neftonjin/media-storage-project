@@ -15,13 +15,13 @@ h3 {
   text-align: center;
 }
 
-.wrapper {
+.main-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 80vh;
   justify-content: center;
-  gap: 6rem
+
 }
 
 header {
@@ -105,36 +105,40 @@ a:hover {
 .HS-title {
   text-align: center;
   padding: 10px;
-  margin: 40px;
+
 }
 
-#high-scores-wrapper {
+.tile-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: stretch;
   flex-wrap: wrap;
-  width: 80%;
+  width: 90%;
   max-width: 1000px;
   margin: auto;
 }
 
-.high-scores-tile {
+.tile {
   border: solid 1px black;
   border-radius: 5px;
   width: 40%;
-  padding: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.high-scores-tile p {
+.tile p {
   text-align: center;
 }
 
 @media only screen and (max-width: 426px) {
-  .high-scores-tile {
+  .tile {
     width: 100%;
-    margin: 15px;
+    margin: 10px;
   }
+
   .HS-title {
     margin-top: 100px;
     margin-bottom: 0px;
@@ -172,10 +176,19 @@ a:hover {
   box-shadow: 1px 1px;
 }
 
-#songHighScores  {
+#songHighScores {
   margin-left: 1rem;
 
 }
+
 #movieHighScores {
   margin-left: 1rem;
+}
+
+#clear {
+  background-color: #007bff;
+  border: #007bff;
+  width: 100%;
+  max-width: 200px;
+  margin: auto;
 }
