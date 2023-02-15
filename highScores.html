@@ -19,21 +19,31 @@
 
 <body>
 
-    <h1 class="title">High scores</h1>
+    <h1 class="HS-title">High scores</h1>
+
+   
+        <a class="home-btn ml-2" href="index.html"><button class=" btn btn-success" >Home</button></a>
+        <button class="btn btn-success my-3 " id="clear">Clear Local Storage</button>
+    
+
+
 
     <section id="high-scores-wrapper">
         <div class="high-scores-tile">
             <h2 id="HS-song-header">Guess the year song quiz</h2>
             <p>No scores available...</p>
+            <ol id="songHighScores"> </ol>
         </div>
 
 
         <div class="high-scores-tile">
             <h2 id="HS-movie-header">Guess the movie quiz</h2>
             <p>No scores available...</p>
+            <ol id="movieHighScores"> </ol>
         </div>
     </section>
 
+  
 
     <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
@@ -41,6 +51,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Js link-->
     <script src="./assets/logic.js"></script>
+    <script src="./assets/scoreStorage.js"></script>
 </body>
 
 </html>

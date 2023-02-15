@@ -1,10 +1,10 @@
+//feature/movieQuizContinued
 let movieTitles = ["Fight club", "Kill bill", "Trainspotting", "Forrest Gump", "Inglorious basterds", "Back to the future", "Ghostbusters", "Inception", "Pulp fiction", "Taxi driver", "The Godfather", "Eternal sunshine of the spotless mind", "The Shining", "Alien", "Pan's Labyrinth", "Indiana Jones and the Raiders of the Lost Ark", "Scarface"];
 // let usedMovieTitles = [];
 let movieTitle = "";
 let queryURL = "";
 let score = 0;
 const scoreEl = $('#score');
-
 
 
 // Function to generate a new movie title and make a new API call
@@ -52,12 +52,15 @@ $('#submit-movie').on("submit", function (event) {
         modalP.text('The film is...');
         modalCorrectMovieBtn.text(movieTitle);
         console.log(`you got it right, it is ${movieTitle}`);
+        feature/movieQuizContinued
         score += 10; // add 10 points to the score
         $('#score').text(`Score: ${score}`); // display the updated score
+
     } else {
         movieAnswerModalToggle;
         $('#modalResult').text("That's wrong, sorry!");
         console.log(`No, it is not ${inputMovie}`);
+        lives -=1;
     }
     inputMovie = $('#input-movie').val('');
 })

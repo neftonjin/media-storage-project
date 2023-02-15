@@ -82,7 +82,6 @@ a:hover {
   text-decoration: none;
 }
 
-
 #modal {
   gap: 1rem;
   padding: 1rem;
@@ -103,10 +102,10 @@ a:hover {
 
 /* High scores specific CSS */
 
-.title {
+.HS-title {
   text-align: center;
   padding: 10px;
-  margin: 30px;
+  margin: 40px;
 }
 
 #high-scores-wrapper {
@@ -136,6 +135,10 @@ a:hover {
     width: 100%;
     margin: 15px;
   }
+  .HS-title {
+    margin-top: 100px;
+    margin-bottom: 0px;
+  }
 
 }
 
@@ -145,4 +148,34 @@ a:hover {
 
 #HS-movie-header {
   color: #007bff;
+}
+
+.nav-button {
+  color: white;
+  border-radius: 3px;
+  background-color: #47d645;
+  border: none;
+  font-size: 1.2em;
+  width: auto;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 40px;
+  margin-top: 40px;
+}
+
+.nav-button:hover {
+  color: #47d645;
+  background-color: white;
+  border: solid 1px #47d645;
+  box-shadow: 1px 1px;
+}
+
+#songHighScores  {
+  margin-left: 1rem;
+
+}
+#movieHighScores {
+  margin-left: 1rem;
 }
