@@ -5,7 +5,7 @@ let movieTitle = "";
 let queryURL = "";
 let score = 0;
 let lives = 3;
-let questionNumber=10;
+let questionNumber=3;
 const scoreEl = $('#score');
 
 
@@ -76,7 +76,7 @@ $('#submit-movie').on("submit", function (event) {
         console.log(`No, it is not ${inputMovie}`);
         lives -=1;
         $("#lives").text(lives);
-        console.log(lives +"lives")
+        console.log(lives +" lives left")
     }
     inputMovie = $('#input-movie').val('');
     
