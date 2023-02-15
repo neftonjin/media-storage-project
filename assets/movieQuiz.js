@@ -1,31 +1,16 @@
 let movieTitles = ["Fight club", "Kill bill", "Trainspotting", "Forrest Gump", "Inglorious basterds", "Back to the future", "Ghostbusters", "Inception", "Pulp fiction", "Taxi driver", "The Godfather", "Eternal sunshine of the spotless mind", "The Shining", "Alien", "Pan's Labyrinth", "Indiana Jones and the Raiders of the Lost Ark", "Scarface"];
-let usedMovieTitles = [];
-// let movieTitle = "";
+// let usedMovieTitles = [];
+let movieTitle = "";
 let queryURL = "";
 let score = 0;
 const scoreEl = $('#score');
 
-// Function to select a new movie that hasn't been used yet
-function selectNewMovie() {
-    // Creates a new array of unused movies selecting the movies that are not in the usedMovieTitles array
-    let unusedMovieTitles = movieTitles.filter(title => !usedMovieTitles.includes(title));
-    if (unusedMovieTitles.length === 0) {
-      // All movies have been used, so reset the usedMovieTitles array
-      usedMovieTitles = [];
-      unusedMovieTitles = movieTitles;
-    }
-    let movieTitle = unusedMovieTitles[Math.floor(Math.random() * unusedMovieTitles.length)];
-    usedMovieTitles.push(movieTitle);
-    return movieTitle;
-  }
-  
-  // Call selectNewMovie to get the initial movieTitle
-  let movieTitle = selectNewMovie();
+
 
 // Function to generate a new movie title and make a new API call
 function generateNewQuestion() {
-    // // Choose a random movie title from the array
-    // movieTitle = movieTitles[Math.floor(Math.random() * movieTitles.length)];
+    // Choose a random movie title from the array
+    movieTitle = movieTitles[Math.floor(Math.random() * movieTitles.length)];
     queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=trilogy";
 
     // Make the API call
