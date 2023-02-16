@@ -21,41 +21,17 @@
     
     <title>Song Quiz</title>
   </head>
-
-
   <body>
-        <header>
-          <p class="lives p-3 text-right">Lives: <span id="lives"></span></p>
-          <h1 class="p-3">Guess the year song quiz</h1>
-          <p class="subtitle py-3"> Instruction on how to play  </p> 
-        </header>
-        <main class="container">
-          <div class="main_wrap row justify-content-center  gap">
-            <div class="question_card col4">
-              <p class="py-2" id="question_title">
-                What year are theses songs released ?
-              </p>
-              <input class="answer_insput" type="text" placeholder="type your answer">
-              <button id="submit_answer" class="btn btn-success">Submit</button>
-              <p class="py-3">Do you need to hear another song?</p>
-              
-              <button class="btn btn-info">Play next track</button>
-            </div>
-            <div class="song_player col-6 p-3">{Song player to be inserted}</div>
-          </div>
-        </main>
-        
-
-        
-        <div id="modal" class="modal-body ">
-          <p>Correct</p>
-          <span >The year is ...</span>
-          <span id="answer" class="btn btn-success" >{write answer}</span>
-          <button id="nextQuestion" class="nextQuestion btn btn-info">Next question</button>
-        </div>
-
-    
-       
+      <h1>Song Quiz</h1> 
+      <p>Can you guess who wrote these famous songs?</p>
+      <button id="play_song_button">Play</button>
+      <div id="box_wrap">
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="quiz-wrap"></div>
+        <div id="quiz-counter"></div>
+        <div id="quiz-results"></div>
+      </div>
     <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <!-- jQuery -->
