@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Boot strap link -->
+    <link type="text/css" rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <!-- Font Awesome link -->
+    <link type="text/css" rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- css style link -->
+    <link type="text/css" rel="stylesheet" href="./assets/style.css" />
+    <title>Guess the year & Guess the movie</title>
+</head>
+
+
+<body>
+    <a class="home-btn ml-2" href="index.html"><button class="nav-button">Home</button><a>
+
+            <div class="main-wrapper">
+                <h1 class="HS-title">High scores</h1>
+
+                <div class="container">
+                    <section class="tile-wrapper">
+                        <div class="tile">
+                            <h2 id="HS-song-header">Guess the year song quiz</h2>
+                            <p>No scores available...</p>
+                            <ol id="songHighScores"> </ol>
+                        </div>
+                        <div class="tile">
+                            <h2 id="HS-movie-header">Guess the movie quiz</h2>
+                            <p>No scores available...</p>
+                            <ol id="movieHighScores"> </ol>
+                        </div>
+                    </section>
+
+                </div>
+                <button class="btn btn-success my-3" id="clear">Clear Local Storage</button>
+            </div>
+
+
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Js link-->
+    <script src="./assets/logic.js"></script>
+    <script src="./assets/scoreStorage.js"></script>
+    <script src="./assets/movieQuiz.js"></script>
+</body>
+
+</html>

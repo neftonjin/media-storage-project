@@ -22,29 +22,22 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <div id="scores_container">
-        <p id="highscores">
-          <a href="highscore.html">High Scores</a>
-        </p>
-      </div>
-      <header>
-        <p class="title_paragraph">Welcome to the ...</p>
-        <h1 class="title">Song & movie quiz!</h1>
-      </header>
+    <div class="wrapper gap">
+      <h2 class="title">Game Over Thanks for playing</h2>
+      <p class="sub_title">
+        You got <span>{score to be inserted}</span> correct.
+      </p>
+      <p class="sub_title">Your score has been saved to high score page</p>
       <div class="container">
-        <div id="box_wrap" class="row">
-          <div class="col-4 border border-dark box" id="box1">
-            <h2>Guess the year</h2>
-            <p>Song quiz</p>
-            <span id="play_song_button" class="play btn btn-danger"><a href="#">Play</a></span>
-          </div>
-          <div class="col-4 border border-dark box" id="box2">
-            <h2>Guess the movie</h2>
-            <p>Movie quiz</p>
-            <span id="play_song_button" class="play btn btn-primary"><a href="#">Play</a></span>
-          </div>
+        <div class="row justify-content-center gap">
+          <a class="" href="highScores.html"><button class="play_again btn btn-primary">View high scores</button></a>
+          <a class="" href="index.html"><button class=" btn btn-warning">Return to home</button></a>
         </div>
+      </div>
+
+      <div class="col-4 border border-dark box" id="box2">
+        <p>Have you played our movie quiz?</p>
+        <a href="movieQuiz.html"><button id="play_song_button" class="play btn btn-danger">Play</button></a>
       </div>
     </div>
     <!-- Moment.js -->

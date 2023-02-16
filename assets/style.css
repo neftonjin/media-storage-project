@@ -3,18 +3,25 @@
   padding: 0;
   box-sizing: 0;
 }
+
 h2 {
   padding: 0.5rem;
   font-size: clamp(0, 5vh + 0.75rem, 0);
   text-align: center;
 }
-.wrapper {
+
+h3 {
+  padding: 2rem;
+  text-align: center;
+}
+
+.main-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 80vh;
   justify-content: center;
-  gap: 6rem;
+
 }
 
 header {
@@ -22,6 +29,7 @@ header {
   margin: 0 auto;
   text-align: center;
 }
+
 #box_wrap {
   padding: 1rem;
   gap: 1rem;
@@ -34,28 +42,153 @@ header {
   padding: 3rem 0;
   align-items: center;
 }
+
 #box1 {
   justify-content: space-between;
 }
+
 .play {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-a{
-    color: white;
+
+a {
+  color: white;
 }
+
 #highscores {
   margin-top: 5rem;
   margin-left: auto;
   padding-right: 4rem;
-  
-}
-#highscores a{
-    color: firebrick;
-    font-size: 1.3rem;
-    font-weight: 500;
-}
-#scores_container{
-    margin-left:auto;
+
 }
 
+#highscores a {
+  color: firebrick;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+#scores_container {
+  margin-left: auto;
+}
+
+.gap {
+  gap: 2rem;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+#modal {
+  gap: 1rem;
+  padding: 1rem;
+  margin: 2rem auto;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  align-items: stretch;
+}
+
+.answer_insput {
+  padding: 0.2rem;
+  padding-bottom: 7px;
+}
+
+/* High scores specific CSS */
+
+.HS-title {
+  text-align: center;
+  padding: 10px;
+
+}
+
+.tile-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.tile {
+  border: solid 1px black;
+  border-radius: 5px;
+  width: 40%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tile p {
+  text-align: center;
+}
+
+@media only screen and (max-width: 426px) {
+  .tile {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .HS-title {
+    margin-top: 100px;
+    margin-bottom: 0px;
+  }
+
+}
+
+#HS-song-header {
+  color: #dc3545;
+}
+
+#HS-movie-header {
+  color: #007bff;
+}
+
+.nav-button {
+  color: white;
+  border-radius: 3px;
+  background-color: #47d645;
+  border: none;
+  font-size: 1.2em;
+  width: auto;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 40px;
+  margin-top: 40px;
+}
+
+.nav-button:hover {
+  color: #47d645;
+  background-color: white;
+  border: solid 1px #47d645;
+  box-shadow: 1px 1px;
+}
+
+#songHighScores {
+  margin-left: 1rem;
+
+}
+
+#movieHighScores {
+  margin-left: 1rem;
+}
+
+#clear {
+  background-color: #007bff;
+  border: #007bff;
+  width: 100%;
+  max-width: 200px;
+  margin: auto;
+}
