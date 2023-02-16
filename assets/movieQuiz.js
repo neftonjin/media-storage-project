@@ -4,8 +4,10 @@ let movieTitles = ["Fight club", "Kill bill", "Trainspotting", "Forrest Gump", "
 let movieTitle = "";
 let queryURL = "";
 let score = 0;
-let lives = 3;
+let lives = 2;
 let questionNumber=3;
+
+let movieHightScoresId =$("#movieHighScores") ;
 const scoreEl = $('#score');
 
 
@@ -32,6 +34,8 @@ $(window).on("load",  function () {
     // Call the function to generate the first question
     generateNewQuestion();
     showAllScores(movieHightScoresId);
+    // $('#nameModal').modal('show');
+   
 });
 
 // Event listener for the submit button
@@ -40,15 +44,18 @@ $('#submit-movie').on("submit", function (event) {
     questionNumber --;
     if (lives === 0) {
         // Redirect to another page
-        window.location.href = "outOfLives.html";
         setScore(score);
+        $('#nameModal').modal('show');
       }
      else if (questionNumber===0) {
-        window.location.href = "highScores.html";
-        setScore(score);
-        
-
+            $('#nameModal').modal('show');
+            setScore(score);
+           
+            
+           
+    
      }
+    else{
     let inputMovie = $('#input-movie').val();
     let modalP = $('<p>');
     let modalCorrectMovieBtn = $('<button>');
@@ -79,8 +86,23 @@ $('#submit-movie').on("submit", function (event) {
         console.log(lives +" lives left")
     }
     inputMovie = $('#input-movie').val('');
-    
+}
+  
 })
+
+$("#saveNameButton").on("click", function(event){
+    let inputName = $("#nameInput").val();
+    console.log(inputName);
+    if(lives===0){
+        historyStorage(inputName);
+         window.location.href = "outOfLives.html";
+    }else if(questionNumber===0){
+        historyStorage(inputName);
+        window.location.href = "highScores.html";
+
+    }
+   }) 
+
 
 // Event listener for the next question button
 $('#next-question').on('click', function() {
@@ -92,6 +114,4 @@ $('#next-question').on('click', function() {
     $('.movie-modal-body').empty();
 });
 
-// $('#close-modal').on('click', function () {
-    
-// })
+
