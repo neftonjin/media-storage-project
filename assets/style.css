@@ -197,6 +197,56 @@ a:hover {
   max-width: 200px;
   margin: auto;
 }
+
+
+#quiz-wrap {
+  background-color: #FFDAB9;
+  border-radius: 25px;
+  padding: 25px;
+  margin: 25px 0;
+  box-shadow: 5px 5px 10px #FFA07A;
+}
+
+.quiz-question {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #FF6347;
+}
+
+.quiz-choice {
+  margin: 15px 0;
+  font-size: 20px;
+  color: #00008B;
+}
+
+#play-song-button {
+  background-color: #FF6347;
+  border: none;
+  color: white;
+  padding: 20px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 25px 0;
+  cursor: pointer;
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px #FFA07A;
+}
+
+#play-song-button:active {
+  background-color: #FFA07A;
+}
+
+#quiz-counter {
+  font-size: 22px;
+  margin-bottom: 25px;
+  color: #00008B;
+}
+.quiz-result {
+  font-size: 24px;
+  margin-top: 20px;
+=======
 #lives{
 
   font-weight: bold;
