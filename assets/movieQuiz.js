@@ -46,16 +46,15 @@ $('#submit-movie').on("submit", function (event) {
     questionNumber --;
     if (lives === 0) {
         // Redirect to another page
+        $('#score').text(`Score: ${score}`)
         setScore(score);
         $('#nameModal').modal('show');
       }
      else if (questionNumber===0) {
             $('#nameModal').modal('show');
+            score += 10;
+            $('#score').text(`Score: ${score}`)
             setScore(score);
-           
-            
-           
-    
      }
     else{
     let inputMovie = $('#input-movie').val();
@@ -88,8 +87,9 @@ $('#submit-movie').on("submit", function (event) {
         console.log(lives +" lives left")
     }
     inputMovie = $('#input-movie').val('');
+   
 }
-  
+
 })
 
 $("#saveNameButton").on("click", function(event){
