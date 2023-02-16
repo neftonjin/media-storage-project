@@ -95,10 +95,3 @@ $('#next-question').on('click', function() {
 // $('#close-modal').on('click', function () {
     
 // })
-
-
-
-
-
-
-

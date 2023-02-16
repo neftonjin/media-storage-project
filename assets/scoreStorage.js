@@ -43,9 +43,7 @@ function showAllScores (id){
   }
 }
 
-inputValue="M.J";
 
-historyStorage(inputValue);
 // setScore(randomPoints);
 // showAllScores(movieHightScoresId);
 
