@@ -119,6 +119,11 @@ a:hover {
   margin: auto;
 }
 
+.wrapper{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
 .tile {
   border: solid 1px black;
   border-radius: 5px;
