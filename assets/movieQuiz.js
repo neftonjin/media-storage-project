@@ -7,8 +7,10 @@ let score = 0;
 let lives = 2;
 let questionNumber=3;
 
-let movieHightScoresId =$("#movieHighScores") ;
+let movieHightScoresId =$("#movieHighScores");
+console.log(" element is "+ movieHightScoresId);
 const scoreEl = $('#score');
+
 
 
 // Function to generate a new movie title and make a new API call
@@ -33,8 +35,8 @@ function generateNewQuestion() {
 $(window).on("load",  function () {
     // Call the function to generate the first question
     generateNewQuestion();
+    console.log("running theh")
     showAllScores(movieHightScoresId);
-    // $('#nameModal').modal('show');
    
 });
 
