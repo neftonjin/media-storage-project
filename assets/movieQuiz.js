@@ -24,7 +24,7 @@ function generateNewQuestion() {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        // console.log(response);
+        console.log(response);
         // console.log(response.Actors);
         let clueTitle = $('<h3>').text('Clue');
         let actorsClueEl = $('<div>').text(response.Actors).addClass('box');
@@ -45,13 +45,15 @@ $('#submit-movie').on("submit", function (event) {
     guesses++; // increment the number of guesses
     let inputMovie = $('#input-movie').val();
     let modalP = $('<p>');
+
     let modalCorrectMovieBtn = $('<button>');
     modalCorrectMovieBtn.attr({
         type: "button", 
         class: "btn-btn-primary", 
         id: "correctMovie"});
     let movieModalBody = $('.movie-modal-body');
-    movieModalBody.append(modalP, modalCorrectMovieBtn);
+    // movieModalBody.append(modalP, modalCorrectMovieBtn);
+    movieModalBody.append(modalP);
     let movieAnswerModalToggle = $('#movieAnswerModal').modal('toggle');
     
     // If/else statement to check whether the user got the movie right
@@ -59,9 +61,25 @@ $('#submit-movie').on("submit", function (event) {
         movieAnswerModalToggle;
         $('#modalResult').text('Correct!');
         modalP.text('The film is...');
-        modalCorrectMovieBtn.text(movieTitle);
-        console.log(`you got it right, it is ${movieTitle}`);
-  
+        // modalCorrectMovieBtn.text(movieTitle);
+
+        // console.log(`you got it right, it is ${movieTitle}`);
+        // add an image of the correct movie
+        queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=trilogy";
+
+        // Make the API call
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+            let imgSrc = response.Poster;
+            // console.log(imgSrc);
+            // console.log(typeof imgSrc);
+            // Create the image element
+            let imgElement = $("<img>").attr({src: imgSrc, id: "modal-image"});
+            $(".movie-modal-body").append(imgElement);
+        })
+
         score += 10; // add 10 points to the score
         $('#score').text(`Score: ${score}`); // display the updated score
 
@@ -89,8 +107,8 @@ $('.modal-footer').on('click', function() {
         return;
     } else { 
     // Generate a new question
-    generateNewQuestion();
     $('.movie-modal-body').empty();
+    generateNewQuestion();
     }
 });
 

@@ -17,15 +17,15 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <a class="align-self-end" href="highScores.html"><button class=" btn btn-success ">High scores</button></a>
+  <a class="align-self-end" href="highScores.html"><button class="nav-button">High scores</button></a>
+  <div class="main-wrapper">
     <header>
       <p class="title_paragraph">Welcome to the ...</p>
       <h1 class="title">Song & movie quiz!</h1>
     </header>
     <div class="container">
-      <div id="box_wrap" class="row">
-        <div class="col-4 border border-dark box" id="box1">
+      <div id="box_wrap" class="row tile-wrapper">
+        <div class="tile" id="box1">
           <h2>Guess the year</h2>
           <p>Song quiz</p>
 
@@ -33,11 +33,11 @@
 
 
         </div>
-        <div class="col-4 border border-dark box" id="box2">
+        <div class="tile" id="box2">
           <h2>Guess the movie</h2>
           <p>Movie quiz</p>
 
-          <a href="movieQuiz.html"> <button id="play_song_button" class="play btn btn-primary">Play</button></a>
+          <a href="movieQuiz.html"> <button id="play_movie_button" class="play btn btn-primary">Play</button></a>
 
         </div>
       </div>
@@ -49,6 +49,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Js link-->
   <script src="./assets/logic.js"></script>
-</body>
+  <!-- <script src="./assets/movieQuiz.js"></script> -->
+  <!-- <script src="./assets/scoreStorage.js"></script> -->
+ 
+  
+  
 
 </html>
