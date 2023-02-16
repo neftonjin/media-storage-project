@@ -29,7 +29,7 @@ const settings = {
   ];
   
   let questionCounter = 0;
-  let score = 0;
+  let scores = 0;
   let usedQuestions = [];
   
   // Function to start the quiz
@@ -87,17 +87,17 @@ $('#quiz-form').on('submit', function(event) {
   const answer = $('input[name=quiz-answer]:checked', '#quiz-form').val();
   if (answer === randomSong.artist) {
     // Update the score if the answer is correct
-    score += 10;
+    scores += 10;
     $('#quiz-wrap').html(`<div class="quiz-answer">Correct! Well done.</div>`);
   } else {
     // Update the score if the answer is incorrect
-    score -= 10;
+    scores -= 10;
     $('#quiz-wrap').html(`<div class="quiz-answer">Sorry, the correct answer is ${randomSong.artist}.</div>`);
   }
 
   // If this is the last question, show the results
   if (questionCounter === 10) {
-    $('#quiz-wrap').append(`<div class="quiz-result">You scored ${score} out of 100.</div>`);
+    $('#quiz-wrap').append(`<div class="quiz-result">You scored ${scores} out of 100.</div>`);
   } else {
     // Otherwise, wait a few seconds and start the next question
     setTimeout(startQuiz, 2000);
