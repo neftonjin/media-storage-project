@@ -1,5 +1,5 @@
 //feature/movieQuizContinued
-let movieTitles = ["Fight club", "Kill bill", "Trainspotting", "Forrest Gump", "Inglorious basterds", "Back to the future", "Ghostbusters", "Inception", "Pulp fiction", "Taxi driver", "The Godfather", "Eternal sunshine of the spotless mind", "The Shining", "Alien", "Pan's Labyrinth", "Indiana Jones and the Raiders of the Lost Ark", "Scarface"];
+let movieTitles = ["Fight club", "Kill bill", "Trainspotting", "Forrest Gump", "Inglorious basterds", "Back to the future", "Ghostbusters", "Inception", "Pulp fiction", "Taxi driver", "The Godfather", "Eternal sunshine of the spotless mind", "The Shining", "Alien", "Pan's Labyrinth", "Indiana Jones", "Scarface"];
 // let usedMovieTitles = [];
 let movieTitle = "";
 let queryURL = "";
@@ -24,7 +24,7 @@ function generateNewQuestion() {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        console.log(response);
+        // console.log(response);
         // console.log(response.Actors);
         let clueTitle = $('<h3>').text('Clue');
         let actorsClueEl = $('<div>').text(response.Actors).addClass('box');
@@ -82,9 +82,10 @@ $('.modal-footer').on('click', function() {
     inputMovie = $('#input-movie').val('');
 
     // check if the user has made 5 guesses
-    if (guesses >= 5) {
+    if (guesses >= 3) {
         // display a message or take any action you want
-        alert("The quiz is done!");
+        // alert("The quiz is done!");
+        window.open('highScores.html');
         return;
     } else { 
     // Generate a new question
