@@ -123,6 +123,7 @@ $('#show_movie_button').on('click', function () {
         let hintTitle = $('<h3>').text('Hint');
         let plotClueEl = $('<div>').text(response.Plot).addClass('box');
         $('#clue-box').append(hintTitle, plotClueEl);
+        $('#show_movie_button').hide();
     })
     score -= 5; // subtract 5 points to the score
     $('#score').text(`Score: ${score}`); // display the updated score
