@@ -1,11 +1,12 @@
 //feature/movieQuizContinued
-let movieTitles = ["Fight club", "Kill bill", "Trainspotting", "Forrest Gump", "Inglorious basterds", "Back to the future", "Ghostbusters", "Inception", "Pulp fiction", "Taxi driver", "The Godfather", "Eternal sunshine of the spotless mind", "The Shining", "Alien", "Pan's Labyrinth", "Indiana Jones", "Scarface"];
+let movieTitles = ["Fight club", "Kill bill", "Trainspotting", "Forrest Gump", "Inglourious basterds", "Back to the future", "Ghostbusters", "Inception", "Pulp fiction", "Taxi driver", "The Godfather", "Eternal sunshine of the spotless mind", "The Shining", "Alien", "Pan's Labyrinth", "Indiana Jones", "Scarface"];
 // let usedMovieTitles = [];
 let movieTitle = "";
 let queryURL = "";
 let score = 0;
 const scoreEl = $('#score');
 let guesses = 0;
+let hintUsed = false;
 
 // Function to select a random movie title from an array
 function selectRandomMovieTitle(movieTitles) {
@@ -15,6 +16,8 @@ function selectRandomMovieTitle(movieTitles) {
 
 // Function to generate a new movie title and make a new API call
 function generateNewQuestion() {
+    hintUsed = false;
+    console.log(hintUsed);
     // Choose a random movie title from the array
     movieTitle = selectRandomMovieTitle(movieTitles);
     queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=trilogy";
@@ -112,7 +115,13 @@ $('.modal-footer').on('click', function() {
     }
 });
 
+
 $('#show_movie_button').on('click', function () {
+    // // Check if hint has already been used
+    if (hintUsed) {
+        return;
+    }
+    hintUsed = true; // set flag to true
     queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=trilogy";
 
     // Make the API call
@@ -123,8 +132,10 @@ $('#show_movie_button').on('click', function () {
         let hintTitle = $('<h3>').text('Hint');
         let plotClueEl = $('<div>').text(response.Plot).addClass('box');
         $('#clue-box').append(hintTitle, plotClueEl);
-        $('#show_movie_button').hide();
+        
     })
     score -= 5; // subtract 5 points to the score
     $('#score').text(`Score: ${score}`); // display the updated score
+    console.log(hintUsed);
+    // $('#show_movie_button').off('click');
 });
