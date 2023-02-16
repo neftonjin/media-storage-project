@@ -7,8 +7,10 @@ let score = 0;
 let lives = 2;
 let questionNumber=3;
 
-let movieHightScoresId =$("#movieHighScores") ;
+let movieHightScoresId =$("#movieHighScores");
+console.log(" element is "+ movieHightScoresId);
 const scoreEl = $('#score');
+
 
 
 // Function to generate a new movie title and make a new API call
@@ -33,8 +35,8 @@ function generateNewQuestion() {
 $(window).on("load",  function () {
     // Call the function to generate the first question
     generateNewQuestion();
+    console.log("running theh")
     showAllScores(movieHightScoresId);
-    // $('#nameModal').modal('show');
    
 });
 
@@ -44,16 +46,15 @@ $('#submit-movie').on("submit", function (event) {
     questionNumber --;
     if (lives === 0) {
         // Redirect to another page
+        $('#score').text(`Score: ${score}`)
         setScore(score);
         $('#nameModal').modal('show');
       }
      else if (questionNumber===0) {
             $('#nameModal').modal('show');
+            score += 10;
+            $('#score').text(`Score: ${score}`)
             setScore(score);
-           
-            
-           
-    
      }
     else{
     let inputMovie = $('#input-movie').val();
@@ -86,8 +87,9 @@ $('#submit-movie').on("submit", function (event) {
         console.log(lives +" lives left")
     }
     inputMovie = $('#input-movie').val('');
+   
 }
-  
+
 })
 
 $("#saveNameButton").on("click", function(event){
