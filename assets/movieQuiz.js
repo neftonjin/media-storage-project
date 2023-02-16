@@ -6,6 +6,7 @@ let queryURL = "";
 let score = 0;
 const scoreEl = $('#score');
 let guesses = 0;
+let lives = 2;
 
 // Function to select a random movie title from an array
 function selectRandomMovieTitle(movieTitles) {
@@ -34,6 +35,7 @@ function generateNewQuestion() {
 
 // $(window).on("load",  function () {
 // Call the function to generate the first question
+ // displaying local storage values on the screen
 generateNewQuestion();
 const currentMovie = movieTitle; // store the current movie title in a variable
 // console.log(currentMovie);
@@ -88,6 +90,7 @@ $('#submit-movie').on("submit", function (event) {
         $('#modalResult').text("That's wrong, sorry!");
         console.log(`No, it is not ${inputMovie}`);
         lives -=1;
+        $("#lives").text(lives);
     }
     inputMovie = $('#input-movie').val('');
 })
@@ -98,11 +101,12 @@ $('.modal-footer').on('click', function() {
     $('#clue-box').empty();
     $('#movieAnswerModal').modal('hide');
     inputMovie = $('#input-movie').val('');
-
+     redirectToFinalPage(lives);
     // check if the user has made 5 guesses
     if (guesses >= 3) {
         // display a message or take any action you want
         // alert("The quiz is done!");
+        setScore(score);
         window.open('highScores.html');
         return;
     } else { 
@@ -128,3 +132,13 @@ $('#show_movie_button').on('click', function () {
     score -= 5; // subtract 5 points to the score
     $('#score').text(`Score: ${score}`); // display the updated score
 });
+
+
+function redirectToFinalPage(life){
+    if(life === 0){
+        window.open('outOfLives.html');
+    }
+}
+    
+
+showAllScores(movieHightScoresId);

@@ -22,15 +22,15 @@ function showAllScores (id){
      for(let i = 0; i < inputHistory.length; i++) { 
         let li = document.createElement("li"); 
         li.textContent = inputHistory[i] + " " + scArray[i];
-        console.log(inputHistory[i] );
-        console.log(scArray[i] );
-        console.log( id);
+        // console.log(inputHistory[i] );
+        // console.log(scArray[i] );
+        // console.log( id);
         id.append(li)
      }
   }
 }
-// let movieHightScoresId = document.getElementById("movieHighScores");//changed with song container
-let songHightScoresId = document.getElementById("songHighScores");//changed with song container
+ let movieHightScoresId = document.getElementById("movieHighScores");//changed with song container
+// let songHightScoresId = document.getElementById("songHighScores");//changed with song container
 
   
 // Setting the score 
