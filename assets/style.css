@@ -192,3 +192,25 @@ a:hover {
   max-width: 200px;
   margin: auto;
 }
+#lives{
+
+  font-weight: bold;
+  font-size: 2rem;
+  color: #dc3545;
+}
+.lives{
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.box_wrap{
+  border: 1px solid black;
+}
+
+#score{
+  max-width: 200px;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #dc3545;
+}

@@ -14,8 +14,8 @@ function historyStorage(inputValue) {
 }
 
 
-let randomPoints= 10;
-let movieHightScoresId = document.getElementById("movieHighScores");//changed with song container
+// let randomPoints= 10;
+// let movieHightScoresId = document.getElementById("movieHighScores");//changed with song container
 let songHightScoresId = document.getElementById("songHighScores");//changed with song container
 
   
@@ -31,21 +31,18 @@ function setScore(points) {
 
 //Showing the score on the list
 function showAllScores (id){
-  let highScoresId = id;
   let inputHistory = JSON.parse(localStorage.getItem("inputHistory"));
   let scArray = JSON.parse(localStorage.getItem("scArray"));
   if(inputHistory !== null && scArray !== null && inputHistory.length !== undefined) {
      for(let i = 0; i < inputHistory.length; i++) { 
         let li = document.createElement("li"); 
         li.textContent = inputHistory[i] + " " + scArray[i];
-        highScoresId.appendChild(li);
+        id.appendChild(li);
      }
   }
 }
 
-inputValue="M.J";
 
-historyStorage(inputValue);
 // setScore(randomPoints);
 // showAllScores(movieHightScoresId);
 
