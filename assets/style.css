@@ -327,6 +327,7 @@ a:hover {
   color: red;
 }
 
+
 .highscore-btn {
   position: fixed;
   top: 10px;
@@ -356,3 +357,4 @@ body#quiz-back {
   background-image: url('/assets/images/crowd.jpg');
   background-size: cover;
 }
+
