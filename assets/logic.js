@@ -18,7 +18,7 @@
   ];
   
   let heartSymbol = '<i class="fas fa-heart"></i>';
-  let lives = 3;
+  let livez = 3;
   let index = 0;
   let questionCounter = 0;
   let usedQuestions = [];
@@ -64,7 +64,7 @@
 	}
   
 	
-	const heartIcons = heartSymbol.repeat(lives);
+	const heartIcons = heartSymbol.repeat(livez);
 	const questionHTML = `
 	  <div class="quiz-question">Who wrote the song "${randomSong.title}"?</div>
 	  <form id="quiz-form">
@@ -95,24 +95,24 @@
 		$('#quiz-wrap').html(`<div class="quiz-answer">Correct! Well done. You're a music genius!</div>`);
 	  } else {
 		// Update the score if the answer is incorrect
-		lives--;
+		livez--;
 		$('#heart-container').find('.fas.fa-heart:last').remove();
 		$('#quiz-wrap').html(`<div class="quiz-answer">Sorry, the correct answer is ${randomSong.artist}. We still like you, don't worry.</div>`);
 	  }
 	  
 	  
 	  audio.pause();
-	  if (questionCounter === 10 || lives === 0) {
+	  if (questionCounter === 10 || livez === 0) {
 		isGameOver = true;
 	  
-		if (lives === 0) {
+		if (livez === 0) {
 		  $('#quiz-wrap').append(`<div class="quiz-result">Game over! You scored ${scores} out of 100.</div><button id="play-again">Play Again</button>`);
 		} else {
 		  $('#quiz-wrap').append(`<div class="quiz-result">You scored ${scores} out of 100.</div><button id="play-again">Play Again</button>`);
 		}
 	  
 		// Show the heart symbols when the page loads
-		const heartsHTML = `${heartSymbol.repeat(lives)}${heartSymbol.repeat(3 - lives)}`;
+		const heartsHTML = `${heartSymbol.repeat(livez)}${heartSymbol.repeat(3 - livez)}`;
 		$('#hearts').html(heartsHTML);
 	  
 		// Add a click event listener to the "Play Again" button
@@ -120,7 +120,7 @@
 		  questionCounter = 0;
 		  usedQuestions = [];
 		  scores = 0;
-		  lives = 3;
+		  livez = 3;
 		  isGameOver = false;
 		  startQuiz();
 		});
@@ -131,7 +131,7 @@
 	  }
 	  
 	  // Update the heart symbols
-	  const heartsHTML = `${heartSymbol.repeat(lives)}${heartSymbol.repeat(3 - lives)}`;
+	  const heartsHTML = `${heartSymbol.repeat(livez)}${heartSymbol.repeat(3 - livez)}`;
 	  $('#hearts').html(heartsHTML);
 	}
 	)
@@ -144,7 +144,5 @@
   
   // Add a click event listener to the "Play" button for the song quiz
   $('#play_song_button').on('click', startQuiz);
-
-  
 
   
