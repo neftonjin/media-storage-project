@@ -16,21 +16,22 @@ function historyStorage(inputValue) {
 
 //Showing the score on the list
 function showAllScores (id){
+  if(!id){return}
   let inputHistory = JSON.parse(localStorage.getItem("inputHistory"));
   let scArray = JSON.parse(localStorage.getItem("scArray"));
   if(inputHistory !== null && scArray !== null && inputHistory.length !== undefined) {
      for(let i = 0; i < inputHistory.length; i++) { 
         let li = document.createElement("li"); 
         li.textContent = inputHistory[i] + " " + scArray[i];
-        console.log(inputHistory[i] );
-        console.log(scArray[i] );
-        console.log( id);
+        // console.log(inputHistory[i] );
+        // console.log(scArray[i] );
+        // console.log( id);
         id.append(li)
      }
   }
 }
-// let movieHightScoresId = document.getElementById("movieHighScores");//changed with song container
-let songHightScoresId = document.getElementById("songHighScores");//changed with song container
+ let movieHightScoresId = document.getElementById("movieHighScores");//changed with song container
+// let songHightScoresId = document.getElementById("songHighScores");//changed with song container
 
   
 // Setting the score 

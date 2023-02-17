@@ -1,13 +1,13 @@
-//feature/movieQuizContinued
-let movieTitles = ["Fight club", "Kill bill", "Trainspotting", "Forrest Gump", "Inglourious basterds", "Back to the future", "Ghostbusters", "Inception", "Pulp fiction", "Taxi driver", "The Godfather", "Eternal sunshine of the spotless mind", "The Shining", "Alien", "Pan's Labyrinth", "Indiana Jones", "Scarface"];
+
+let movieTitles = ["Fight club", "Kill bill", "Trainspotting", "Forrest Gump", "Inglorious basterds", "Back to the future", "Ghostbusters", "Inception", "Pulp fiction", "Taxi driver", "The Godfather", "Eternal sunshine of the spotless mind", "The Shining", "Alien", "Pan's Labyrinth", "Indiana Jones and the Raiders of the Lost Ark", "Scarface"];
 // let usedMovieTitles = [];
 let movieTitle = "";
 let queryURL = "";
 let score = 0;
 const scoreEl = $('#score');
 let guesses = 0;
-let hintUsed = false;
-
+let lives = 2;
+let inputString="";
 // Function to select a random movie title from an array
 function selectRandomMovieTitle(movieTitles) {
     let randomIndex = Math.floor(Math.random() * movieTitles.length);
@@ -16,8 +16,6 @@ function selectRandomMovieTitle(movieTitles) {
 
 // Function to generate a new movie title and make a new API call
 function generateNewQuestion() {
-    hintUsed = false;
-    console.log(hintUsed);
     // Choose a random movie title from the array
     movieTitle = selectRandomMovieTitle(movieTitles);
     queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=trilogy";
@@ -37,6 +35,7 @@ function generateNewQuestion() {
 
 // $(window).on("load",  function () {
 // Call the function to generate the first question
+ // displaying local storage values on the screen
 generateNewQuestion();
 const currentMovie = movieTitle; // store the current movie title in a variable
 // console.log(currentMovie);
@@ -45,7 +44,7 @@ const currentMovie = movieTitle; // store the current movie title in a variable
 // Event listener for the submit button
 $('#submit-movie').on("submit", function (event) {
     event.preventDefault();
-    guesses++; // increment the number of guesses
+    // increment the number of guesses
     let inputMovie = $('#input-movie').val();
     let modalP = $('<p>');
 
@@ -61,6 +60,7 @@ $('#submit-movie').on("submit", function (event) {
     
     // If/else statement to check whether the user got the movie right
     if (inputMovie.toLowerCase() === movieTitle.toLowerCase()) {
+        guesses++;
         movieAnswerModalToggle;
         $('#modalResult').text('Correct!');
         modalP.text('The film is...');
@@ -91,6 +91,7 @@ $('#submit-movie').on("submit", function (event) {
         $('#modalResult').text("That's wrong, sorry!");
         console.log(`No, it is not ${inputMovie}`);
         lives -=1;
+        $("#lives").text(lives);
     }
     inputMovie = $('#input-movie').val('');
 })
@@ -101,13 +102,16 @@ $('.modal-footer').on('click', function() {
     $('#clue-box').empty();
     $('#movieAnswerModal').modal('hide');
     inputMovie = $('#input-movie').val('');
-
+     redirectToFinalPage(lives);
     // check if the user has made 5 guesses
-    if (guesses >= 3) {
+    if (guesses >= 1) {
         // display a message or take any action you want
         // alert("The quiz is done!");
-        window.open('highScores.html');
-        return;
+        
+        redirectToHighScore(guesses);
+        
+        // window.location.href='highScores.html'; ////////////////////////////////////////////////////////////////////////////////////////////////
+       
     } else { 
     // Generate a new question
     $('.movie-modal-body').empty();
@@ -115,13 +119,7 @@ $('.modal-footer').on('click', function() {
     }
 });
 
-
 $('#show_movie_button').on('click', function () {
-    // // Check if hint has already been used
-    if (hintUsed) {
-        return;
-    }
-    hintUsed = true; // set flag to true
     queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=trilogy";
 
     // Make the API call
@@ -132,10 +130,39 @@ $('#show_movie_button').on('click', function () {
         let hintTitle = $('<h3>').text('Hint');
         let plotClueEl = $('<div>').text(response.Plot).addClass('box');
         $('#clue-box').append(hintTitle, plotClueEl);
-        
+        $('#show_movie_button').hide();
     })
     score -= 5; // subtract 5 points to the score
     $('#score').text(`Score: ${score}`); // display the updated score
-    console.log(hintUsed);
-    // $('#show_movie_button').off('click');
 });
+
+
+function redirectToFinalPage(life){
+    if(life === 0){
+        window.location.href = 'outOfLives.html';
+    }
+}
+    
+function redirectToHighScore(guessNr){
+  
+    if (guessNr === 1) {
+        // Show the modal
+        $('#my-modal').modal({
+          backdrop: 'static', // Prevents closing the modal when clicking outside of it
+          keyboard: false // Prevents closing the modal when pressing the Esc key
+        });
+      
+        // When the user clicks the save button, save the input value and close the modal
+        $('#save-button').click(function(event) {
+           inputString = $('#input-string').val(); // Get the value of the input field
+           console.log('Input value:', inputString); // Log the value to the console
+           historyStorage(inputString);
+           setScore(score);
+           console.log("i need to hide ")
+           window.location.href='highScores.html'
+           $('#my-modal').modal('hide'); // Hide the modal
+        });
+      }
+}
+
+showAllScores(movieHightScoresId);
