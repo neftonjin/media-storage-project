@@ -20,17 +20,26 @@
     <!-- css style link -->
     <link type="text/css" rel="stylesheet" href="./assets/style.css" />
     <title>Guess the year & Guess the movie</title>
-    <title>Movie quiz</title>
+   
+    
 </head>
 <body>
     <div class="wrapper">
         <header>
             <h1 class="title">Guess the year movie</h1>
             <label for="movie-name"><h2>Can you guess the movie from the clues provided?</h2></label>
-            <p  class="lives p-3 text-right">Lives: <span id="lives">2</span></p>
+            <div class="score_lives container">
+              <div class="row align-items-center">
+                <p class="lives p-3 text-right col-5">Lives: <span id="lives">2</span></p> 
+                <p id="score" class="col-5"> Score: <span class="score"> 0 </span> </p>
+              </div>
+              
+            </div>
+            
+            
         </header>
         <div class="container">
-          <div id="box_wrap" class="row">
+          <div id="box_wrap" class="row box_wrap">
             <div class="col-4 box" id="questions">
               <form action="submit" id="submit-movie">
                 <h2>Write your answer here</h2>
@@ -46,7 +55,7 @@
             </div>
           </div>
         </div>
-        <div id="score">Score: 0</div>
+        
         <!-- Modal -->
         <div class="modal fade" id="movieAnswerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
           <div class="modal-dialog modal-dialog-centered" role="document">

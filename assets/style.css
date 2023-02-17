@@ -34,6 +34,7 @@ header {
   padding: 1rem;
   gap: 1rem;
   justify-content: center;
+  
 }
 
 .box {
@@ -246,7 +247,7 @@ a:hover {
 .quiz-result {
   font-size: 24px;
   margin-top: 20px;
-=======
+}
 #lives{
 
   font-weight: bold;
@@ -275,4 +276,20 @@ a:hover {
   height: auto;
   margin: auto;
   display: block;
+}
+
+#clue-box{
+  border: 1px black solid;
+}
+
+#score{
+  color: black;
+}
+.score{
+  color: #dc3545;
+}
+
+.title{
+  border-bottom: black 1px solid;
+  padding-bottom: 1rem;
 }
