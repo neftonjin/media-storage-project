@@ -347,7 +347,6 @@ a:hover {
 }
 
 #quiz-back {
-  background-image: url('./assets/images/crowd.jpg');
+  background-image: url('https://github.com/neftonjin/media-storage-project/blob/ffeb60fe1f8e267cf646a948672bfd21ed7993e6/assets/images/crowd.jpg');
   background-size: cover;
 }
-
