@@ -16,6 +16,7 @@ function historyStorage(inputValue) {
 
 //Showing the score on the list
 function showAllScores (id){
+  if(!id){return}
   let inputHistory = JSON.parse(localStorage.getItem("inputHistory"));
   let scArray = JSON.parse(localStorage.getItem("scArray"));
   if(inputHistory !== null && scArray !== null && inputHistory.length !== undefined) {

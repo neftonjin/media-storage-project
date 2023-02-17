@@ -7,7 +7,7 @@ let score = 0;
 const scoreEl = $('#score');
 let guesses = 0;
 let lives = 2;
-
+let inputString="";
 // Function to select a random movie title from an array
 function selectRandomMovieTitle(movieTitles) {
     let randomIndex = Math.floor(Math.random() * movieTitles.length);
@@ -103,12 +103,14 @@ $('.modal-footer').on('click', function() {
     inputMovie = $('#input-movie').val('');
      redirectToFinalPage(lives);
     // check if the user has made 5 guesses
-    if (guesses >= 3) {
+    if (guesses >= 1) {
         // display a message or take any action you want
         // alert("The quiz is done!");
-        setScore(score);
-        window.location.href('highScores.html');
-        return;
+        
+        redirectToHighScore(guesses);
+        
+        // window.location.href='highScores.html'; ////////////////////////////////////////////////////////////////////////////////////////////////
+       
     } else { 
     // Generate a new question
     $('.movie-modal-body').empty();
@@ -140,5 +142,26 @@ function redirectToFinalPage(life){
     }
 }
     
+function redirectToHighScore(guessNr){
+  
+    if (guessNr === 1) {
+        // Show the modal
+        $('#my-modal').modal({
+          backdrop: 'static', // Prevents closing the modal when clicking outside of it
+          keyboard: false // Prevents closing the modal when pressing the Esc key
+        });
+      
+        // When the user clicks the save button, save the input value and close the modal
+        $('#save-button').click(function(event) {
+           inputString = $('#input-string').val(); // Get the value of the input field
+           console.log('Input value:', inputString); // Log the value to the console
+           historyStorage(inputString);
+           setScore(score);
+           console.log("i need to hide ")
+           window.location.href='highScores.html'
+           $('#my-modal').modal('hide'); // Hide the modal
+        });
+      }
+}
 
 showAllScores(movieHightScoresId);

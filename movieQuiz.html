@@ -68,26 +68,22 @@
           </div>
         </div>
 
-        <!-- Create a modal with a form for the user to input their name -->
-<div class="modal fade" id="nameModal" tabindex="-1" role="dialog" aria-labelledby="nameModalLabel" aria-hidden="true">
+ <!-- Modal container for name input-->
+<div class="modal" id="my-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="nameModalLabel">Please enter your name</h5>
+        <h5 class="modal-title" id="modal-title">Type your name:</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="nameInput">Name:</label>
-            <input type="text" class="form-control" id="nameInput">
-          </div>
-        </form>
+        <input type="text" class="form-control" id="input-string">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="saveNameButton" data-dismiss="modal">Save</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="save-button">Save</button>
       </div>
     </div>
   </div>
