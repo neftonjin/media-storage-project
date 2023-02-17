@@ -9,7 +9,14 @@ This repo consists of 2 quizzes
 We worked as a team of 4, which was all of our first time working in a group coding project. We learnt a lot on how to work on the same code, how to use branches and much more. 
 
 ## In the code 
-We used html, css, javascript and APIs to create these quizzes. The 2 APIs are IMBD API and Spotify API.
+We used html, css, bootstrap, javascript and APIs to create these quizzes. The 2 APIs are IMBD API and Spotify API.
 
-## Status 
-At time of writing, this is unfinished as we stumbled on a few hurdles to get this done in a relatively short (for a first-time group) timeline. 
+## Song quiz wireframe
+![Song quiz wireframe](https://github.com/neftonjin/media-storage-project/blob/main/wireframes/2.song-quiz-workflow.png?raw=true)
+
+## Movie quiz wireframe 
+![Movie quiz wireframe](https://github.com/neftonjin/media-storage-project/blob/main/wireframes/3.movie-quiz-workflow.png?raw=true)
+
+
+## Link to the deployed page
+https://neftonjin.github.io/media-storage-project/
