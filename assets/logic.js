@@ -1,7 +1,5 @@
-
-
-  // Define an array of songs and their corresponding artists
-  const songs = [
+ // Define an array of songs and their corresponding artists
+ const songs = [
 	{ title: 'Bohemian Rhapsody', artist: 'Queen', preview_url: 'https://p.scdn.co/mp3-preview/4c8e7c9f5fcaa2c54178583b31bcbce08bc329b0?cid=d8a5ed958d274c2e8ee717e6a4b0971d' },
 	{ title: 'Like a Rolling Stone', artist: 'Bob Dylan', preview_url: 'https://p.scdn.co/mp3-preview/f0b80375e119086da7b15568a31995f3a9311490?cid=d8a5ed958d274c2e8ee717e6a4b0971d' },
 	{ title: 'Stairway to Heaven', artist: 'Led Zeppelin', preview_url: 'https://p.scdn.co/mp3-preview/d65345613e6e9d2b09816783b9c79793f9175a41?cid=d8a5ed958d274c2e8ee717e6a4b0971d' },
