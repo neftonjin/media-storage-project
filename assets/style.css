@@ -347,6 +347,6 @@ a:hover {
 }
 
 #quiz-back {
-  background-image: url('../images/crowd.jpg');
+  background-image: url('.../images/crowd.jpg');
   background-size: cover;
 }
