@@ -139,6 +139,13 @@ a:hover {
   text-align: center;
 }
 
+#modal-image {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
 @media only screen and (max-width: 426px) {
   .tile {
     width: 100%;
