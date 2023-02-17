@@ -147,6 +147,6 @@
   // Add a click event listener to the "Play" button for the song quiz
   $('#play_song_button').on('click', startQuiz);
 
-  document.getElementById("quiz-body").style.backgroundImage = "url('assets/images/crowd.jpg')";
+  
 
   
