@@ -4,7 +4,7 @@ let movieTitles = ["Fight club", "Kill bill", "Trainspotting", "Forrest Gump", "
 let movieTitle = "";
 let queryURL = "";
 let score = 0;
-const scoreEl = $('#score');
+const scoreEl = $('#scor');
 let guesses = 0;
 let lives = 2;
 let inputString="";
@@ -60,7 +60,7 @@ $('#submit-movie').on("submit", function (event) {
     
     // If/else statement to check whether the user got the movie right
     if (inputMovie.toLowerCase() === movieTitle.toLowerCase()) {
-        guesses++;
+         guesses++;
         movieAnswerModalToggle;
         $('#modalResult').text('Correct!');
         modalP.text('The film is...');
@@ -84,7 +84,7 @@ $('#submit-movie').on("submit", function (event) {
         })
 
         score += 10; // add 10 points to the score
-        $('#score').text(`Score: ${score}`); // display the updated score
+        $('#scor').text(`${score}`); // display the updated score
 
     } else {
         movieAnswerModalToggle;
@@ -133,7 +133,7 @@ $('#show_movie_button').on('click', function () {
         $('#show_movie_button').hide();
     })
     score -= 5; // subtract 5 points to the score
-    $('#score').text(`Score: ${score}`); // display the updated score
+    $('#scor').text(` ${score}`); // display the updated score
 });
 
 
