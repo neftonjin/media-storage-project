@@ -194,50 +194,120 @@ a:hover {
 }
 
 #quiz-wrap {
-  background-color: #FFDAB9;
+  background-color: #f19b9b;
   border-radius: 25px;
   padding: 25px;
   margin: 25px 0;
-  box-shadow: 5px 5px 10px #FFA07A;
+  box-shadow: 5px 5px 10px #e9571e;
 }
 
 .quiz-question {
   font-size: 28px;
   margin-bottom: 25px;
-  color: #FF6347;
+  color: #dd381b;
 }
 
 .quiz-choice {
   margin: 15px 0;
   font-size: 20px;
-  color: #00008B;
+  color: #dd381b;
 }
 
-#play-song-button {
-  background-color: #FF6347;
-  border: none;
-  color: white;
-  padding: 20px 40px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-  margin: 25px 0;
-  cursor: pointer;
-  border-radius: 25px;
-  box-shadow: 2px 2px 5px #FFA07A;
+#play_song_button {
+  margin: 10px;
+  background-color: #FF0000; /* set button background color to red */
+  color: #FFFFFF; /* set button text color to white */
+  border: none; /* remove button border */
+  border-radius: 5px; /* add a rounded border */
+  font-size: 18px; /* set button text size */
+  padding: 10px 20px; /* set button padding */
+  text-align: center; /* center button text */
+  text-transform: uppercase; /* capitalize button text */
+  box-shadow: 2px 2px 5px #000000; /* add a subtle shadow effect */
 }
 
-#play-song-button:active {
-  background-color: #FFA07A;
+#play_song_button:hover {
+  background-color: #D80000; /* darken button color on hover */
+  cursor: pointer; /* show pointer cursor on hover */
 }
+
 
 #quiz-counter {
   font-size: 22px;
   margin-bottom: 25px;
-  color: #00008B;
+  color: #ffffff;
 }
+
 .quiz-result {
   font-size: 24px;
   margin-top: 20px;
+}
+
+#quizTitle {
+  margin: 10px;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+
+#quiz-body {
+  background-image: "url('assets/images/crowd.jpg')";
+  background-size: cover;
+}
+
+
+#quiz-form > input[type=submit] {
+  background-color: #D80000; /* Set the background color */
+  border: none; /* Remove the border */
+  color: white; /* Set the text color */
+  padding: 12px 24px; /* Set the padding */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove the underline */
+  display: inline-block; /* Make it an inline block */
+  font-size: 16px; /* Set the font size */
+  margin: 4px 2px; /* Set the margin */
+  cursor: pointer; /* Add a pointer on hover */
+  border-radius: 4px; /* Add a border radius */
+}
+
+#quiz-form > input[type=submit]:hover {
+  background-color: #4CAF50; /* darken button color on hover */
+  cursor: pointer; /* show pointer cursor on hover */
+}
+
+#play-again {
+  background-color: #D80000; /* Set the background color */
+  border: none; /* Remove the border */
+  color: white; /* Set the text color */
+  padding: 12px 24px; /* Set the padding */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove the underline */
+  display: inline-block; /* Make it an inline block */
+  font-size: 16px; /* Set the font size */
+  margin: 4px 2px; /* Set the margin */
+  cursor: pointer; /* Add a pointer on hover */
+  border-radius: 4px; /* Add a border radius */
+}
+
+#play-again:hover {
+  background-color: #4CAF50; /* darken button color on hover */
+  cursor: pointer; /* show pointer cursor on hover */
+}
+
+#heart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  font-size: 2rem;
+}
+
+.heart {
+  margin-right: 10px;
+  color: #fd0202;
+  text-shadow: 0 0 2px #070707, 0 0 4px #030303, 0 0 6px #020202;
+}
+
+.fa-heart {
+  color: red;
 }
