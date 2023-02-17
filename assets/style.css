@@ -206,6 +206,51 @@ a:hover {
   margin: auto;
 }
 
+#lives{
+
+  font-weight: bold;
+  font-size: 2rem;
+  color: #dc3545;
+}
+.lives{
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.box_wrap{
+  border: 1px solid black;
+}
+
+#score{
+  max-width: 200px;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #dc3545;
+}
+
+#modal-image {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+#clue-box{
+  border: 1px black solid;
+}
+
+#score{
+  color: black;
+}
+.score{
+  color: #dc3545;
+}
+
+.title{
+  border-bottom: black 1px solid;
+  padding-bottom: 1rem;
+}
 
 #quiz-wrap {
   background-color: #f19b9b;
