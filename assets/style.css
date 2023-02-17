@@ -119,6 +119,11 @@ a:hover {
   margin: auto;
 }
 
+.wrapper{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
 .tile {
   border: solid 1px black;
   border-radius: 5px;
@@ -193,6 +198,7 @@ a:hover {
   margin: auto;
 }
 
+
 #quiz-wrap {
   background-color: #f19b9b;
   border-radius: 25px;
@@ -241,6 +247,7 @@ a:hover {
 .quiz-result {
   font-size: 24px;
   margin-top: 20px;
+
 }
 
 #quizTitle {
