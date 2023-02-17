@@ -264,13 +264,6 @@ a:hover {
   text-shadow: 2px 2px black;
 }
 
-
-#quiz-body {
-  background-image: "url('assets/images/crowd.jpg')";
-  background-size: cover;
-}
-
-
 #quiz-form > input[type=submit] {
   background-color: #D80000; /* Set the background color */
   border: none; /* Remove the border */
