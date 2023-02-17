@@ -326,3 +326,33 @@ a:hover {
 .fa-heart {
   color: red;
 }
+
+.highscore-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.highscore-btn {
+  background-color: #D80000; /* Set the background color */
+  border: none; /* Remove the border */
+  color: white; /* Set the text color */
+  padding: 12px 24px; /* Set the padding */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove the underline */
+  display: inline-block; /* Make it an inline block */
+  font-size: 16px; /* Set the font size */
+  margin: 4px 2px; /* Set the margin */
+  cursor: pointer; /* Add a pointer on hover */
+  border-radius: 4px; /* Add a border radius */
+}
+
+.highscore-btn:hover {
+  background-color: #4CAF50; /* darken button color on hover */
+  cursor: pointer; /* show pointer cursor on hover */
+}
+
+body#quiz-back {
+  background-image: url('/assets/images/crowd.jpg');
+  background-size: cover;
+}
