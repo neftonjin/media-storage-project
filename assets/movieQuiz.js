@@ -44,7 +44,7 @@ const currentMovie = movieTitle; // store the current movie title in a variable
 // Event listener for the submit button
 $('#submit-movie').on("submit", function (event) {
     event.preventDefault();
-    guesses++; // increment the number of guesses
+    // increment the number of guesses
     let inputMovie = $('#input-movie').val();
     let modalP = $('<p>');
 
@@ -60,6 +60,7 @@ $('#submit-movie').on("submit", function (event) {
     
     // If/else statement to check whether the user got the movie right
     if (inputMovie.toLowerCase() === movieTitle.toLowerCase()) {
+        guesses++;
         movieAnswerModalToggle;
         $('#modalResult').text('Correct!');
         modalP.text('The film is...');
