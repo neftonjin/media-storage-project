@@ -107,7 +107,7 @@ $('.modal-footer').on('click', function() {
         // display a message or take any action you want
         // alert("The quiz is done!");
         setScore(score);
-        window.open('highScores.html');
+        window.location.href('highScores.html');
         return;
     } else { 
     // Generate a new question
@@ -136,7 +136,7 @@ $('#show_movie_button').on('click', function () {
 
 function redirectToFinalPage(life){
     if(life === 0){
-        window.open('outOfLives.html');
+        window.location.href = 'outOfLives.html';
     }
 }
     
