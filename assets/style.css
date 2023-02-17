@@ -354,7 +354,7 @@ a:hover {
 }
 
 body#quiz-back {
-  background-image: url('/assets/images/crowd.jpg');
+  background-image: url('./assets/images/crowd.jpg');
   background-size: cover;
 }
 
