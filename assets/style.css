@@ -146,6 +146,15 @@ a:hover {
   display: block;
 }
 
+#input-movie {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
 @media only screen and (max-width: 426px) {
   .tile {
     width: 100%;
@@ -227,7 +236,7 @@ a:hover {
   color: #dd381b;
 }
 
-#play_song_button {
+#play_song_button, #play_movie_button {
   margin: 10px;
   background-color: #FF0000; /* set button background color to red */
   color: #FFFFFF; /* set button text color to white */
@@ -240,8 +249,18 @@ a:hover {
   box-shadow: 2px 2px 5px #000000; /* add a subtle shadow effect */
 }
 
+#play_movie_button {
+  margin: 10px;
+  background-color: #5900ff; /* set button background color to red */
+}
+
 #play_song_button:hover {
   background-color: #D80000; /* darken button color on hover */
+  cursor: pointer; /* show pointer cursor on hover */
+}
+
+#play_movie_button:hover {
+  background-color: #3a02a1; /* darken button color on hover */
   cursor: pointer; /* show pointer cursor on hover */
 }
 
